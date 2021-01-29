@@ -115,6 +115,7 @@ nav ul li a:hover, a.active{
     color: #fff;
     font-weight: 500;
     background-color:  #3352F2;
+    cursor: pointer;
 }
 .amount{
     display: flex;
@@ -123,4 +124,32 @@ nav ul li a:hover, a.active{
 /* Customize Css */
 #addFirstClass,#lessFirstClass,#addEconomyClass,#lessEconomyClass{
     cursor: pointer;
+}
+
+/* Confirm Box Css */
+#confirmBox{
+    width: 900px;
+    height: 550px;
+    background:rgb(49, 49, 49);
+    border-radius: 10px;
+    text-align: center;
+    position: absolute;
+    content:"";
+    top: 25%;
+    left: 25%;
+    display:none;
+}
+.confirm-img img{
+    width: 120px;
+    margin-top: 50px;
+}
+.welcome-txt h2{
+    color:rgb(74, 172, 74);
+    font-size: 32px;
+}
+.ticket-info{
+    margin-top: 30px;
+    color:#fff;
+    display: flex;
+    justify-content: space-around;
 }
