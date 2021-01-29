@@ -7,7 +7,7 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background:url("images/bg.png");
+    background:url(../images/bg.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: scroll;
@@ -119,4 +119,8 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+/* Customize Css */
+#addFirstClass,#lessFirstClass,#addEconomyClass,#lessEconomyClass{
+    cursor: pointer;
 }
