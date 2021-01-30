@@ -124,6 +124,11 @@ nav ul li a:hover, a.active{
 /* Customize Css */
 #addFirstClass,#lessFirstClass,#addEconomyClass,#lessEconomyClass{
     cursor: pointer;
+    background:rgb(24, 55, 158);
+    padding:4px 8px;
+    margin-left: 2px;
+    border-radius: 4px;
+    color: #fff;
 }
 
 /* Confirm Box Css */
@@ -139,6 +144,12 @@ nav ul li a:hover, a.active{
     left: 25%;
     display:none;
 }
+.remove-box img{
+position: absolute;
+top: 40px;
+right: 30px;
+cursor: pointer;
+}
 .confirm-img img{
     width: 120px;
     margin-top: 50px;
@@ -152,4 +163,10 @@ nav ul li a:hover, a.active{
     color:#fff;
     display: flex;
     justify-content: space-around;
+}
+#ticketEconomy{
+    margin-right: 18px;
+}
+#ticketTotalVat,#ticketTotalAmount{
+    margin-left: 300px;
 }

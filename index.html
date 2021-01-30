@@ -54,7 +54,7 @@
                     <input id="inputFirstClass" class="inp-style inp-width" value="0" type="number" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <span id="addFirstClass">+</span> <span id="lessFirstClass">-</span>
+                    <span onclick="firstClassSeatCount(true)" id="addFirstClass">+</span> <span onclick="firstClassSeatCount(false)" id="lessFirstClass">-</span>
                 </div>
             </div>
             
@@ -64,7 +64,7 @@
                     <input id="inputEconomyClass" class="inp-style inp-width" value="5" type="number" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <span id="addEconomyClass">+</span> <span id="lessEconomyClass">-</span>
+                    <span onclick="economyClassSeatCount(true)" id="addEconomyClass">+</span> <span onclick="economyClassSeatCount(false)" id="lessEconomyClass">-</span>
                 </div>
             </div>
             <div class="calculations">
@@ -109,6 +109,9 @@
        <div class="confirm-img">
         <img src="images/confirm.png" alt="">
        </div>
+       <div class="remove-box" id="removeBox">
+           <img src="images/remove.png" alt="">
+       </div>
        <div class="welcome-txt">
            <h2>Thank You,Your Ticket Confirm NoW</h2>
        </div>
@@ -119,19 +122,23 @@
     </div>
        <div class="ticket-info">
            <h3>First Class Ticket</h3>
-           <span id="ticketFNum">0</span>
-           <span id="ticketFTotal">0</span>
+           <span id="ticketFirst">0</span>
+           <span id="ticketFirstTotal">0</span>
        </div>
        <div class="ticket-info">
         <h3>Economy Class Ticket</h3>
-        <span id="ticketENum">0</span>
-        <span id="ticketETotal">0</span>
+        <span id="ticketEconomy">0</span>
+        <span id="ticketEconomyTotal">0</span>
         </div>
-       <!-- <div class="ticket-info">
+       <div class="ticket-info">
         <h3>Extra Vat +</h3>
-        <span id="ticketENum">0</span>
-        <span id="ticketETotal">0</span>
-        </div> -->
+        <span id="ticketTotalVat">0</span>
+        
+        </div>
+       <div class="ticket-info">
+        <h3>Total With (Vat +)</h3>
+        <span id="ticketTotalAmount">0</span>
+        </div>
     </div>
 
     <!--Thank You-->

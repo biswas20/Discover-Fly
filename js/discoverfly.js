@@ -1,18 +1,8 @@
 
-// First Class Flight For Js Code
-let addFirstClass=document.getElementById("addFirstClass");
-addFirstClass.addEventListener('click',function(){
-    firstClassSeatCount(true);
-});
-let lessFirstClass=document.getElementById("lessFirstClass");
-lessFirstClass.addEventListener('click',function(){
-    firstClassSeatCount(false);
-});
-
+// First Class Ticket Flight For Js Code
 function firstClassSeatCount(isIncrease){
     let inputFirstClass=document.getElementById("inputFirstClass").value;
     let inputFirstClassCount=parseInt(inputFirstClass);
-    
     if(isIncrease==true){
         inputFirstClassCount++;
         
@@ -20,25 +10,10 @@ function firstClassSeatCount(isIncrease){
     else if(isIncrease==false && inputFirstClassCount>0){
         inputFirstClassCount--;
     }
-
     document.getElementById("inputFirstClass").value=inputFirstClassCount;
-    document.getElementById("ticketFNum").innerText=inputFirstClassCount;
-    let ticketFTotal=inputFirstClassCount*150;
-    document.getElementById("ticketFTotal").innerText='$ ' + ticketFTotal;
     calculateTotal();
-    
 }
-// Economy Class Flight For Js Code
-let addEconomyClass=document.getElementById("addEconomyClass");
-addEconomyClass.addEventListener('click',function(){
-    economyClassSeatCount(true);
-});
-
-let lessEconomyClass=document.getElementById("lessEconomyClass");
-lessEconomyClass.addEventListener('click',function(){
-   economyClassSeatCount(false);
-});
-
+// Economy Class Ticket Flight For Js Code
 function economyClassSeatCount(isIncrease){
     let inputEconomyClass=document.getElementById("inputEconomyClass").value;
     let inputEconomyClassCount=parseInt(inputEconomyClass);
@@ -50,9 +25,6 @@ function economyClassSeatCount(isIncrease){
         inputEconomyClassCount--;
     }
     document.getElementById("inputEconomyClass").value=inputEconomyClassCount;
-    document.getElementById("ticketENum").innerText=inputEconomyClassCount;
-    let ticketETotal=inputEconomyClassCount*100;
-    document.getElementById("ticketETotal").innerText='$ ' + ticketETotal;
     calculateTotal();
 }
 // Calculate Total Amount Function
@@ -67,97 +39,32 @@ function calculateTotal(){
     document.getElementById("vatCount").innerText=vatCount;
     let totalAmount=subTotalAmount+vatCount;
     document.getElementById("totalAmount").innerText=totalAmount;
+    document.getElementById("ticketFirstTotal").innerText='$ '+inputFirstClassCount*150;
+    document.getElementById("ticketEconomyTotal").innerText='$ '+ inputEconomyClassCount*100;
+    document.getElementById("ticketTotalVat").innerText='$ '+vatCount;
+    let ticketSubTotal=inputEconomyClassCount*100+inputFirstClassCount*150;
+    let ticketVat=ticketSubTotal*0.1;
+    let ticketTotalAmount=ticketSubTotal+ticketVat;
+    document.getElementById("ticketTotalAmount").innerText= '$ '+ ticketTotalAmount;
 }
 //Book Now Button Js Code
 let bookNow=document.getElementById("bookNow");
 bookNow.addEventListener('click',function(){
     document.getElementById("mainDiv").style.display="none";
     document.getElementById("confirmBox").style.display="block";
+    let firstClassTicket=document.getElementById("inputFirstClass").value;
+    document.getElementById("ticketFirst").innerText=firstClassTicket;
+    let economyClassTicket=document.getElementById("inputEconomyClass").value;
+    document.getElementById("ticketEconomy").innerText=economyClassTicket;
+    document.getElementById("ticketEconomyTotal").innerText=economyClassTicket*100;
+    calculateTotal();
+    document.getElementById("ticketTotalVat").innerText=ticketVat;
+    
 });
 
-// Confirm Box Js Code
-// let inputFirstClass=document.getElementById("inputFirstClass").value;
-// let inputFirstClassCount=parseInt(inputFirstClass);
-// document.getElementById("ticketFNum").innerText=inputFirstClassCount;
-// let ticketFTotal=inputFirstClassCount*150;
-// document.getElementById("ticketFTotal").innerText='$ ' + ticketFTotal;
-// let inputEconomyClass=document.getElementById("inputEconomyClass").value;
-// let inputEconomyClassCount=parseInt(inputEconomyClass);
-// document.getElementById("ticketENum").innerText=inputEconomyClassCount;
-// let ticketETotal=inputEconomyClassCount*100;
-// document.getElementById("ticketETotal").innerText='$ ' + ticketETotal;
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function yourFlightClass(chooseClass){
-//     let chooseClass=document.getElementById(chooseClass).value;
-//     let chooseClassNum=parseInt(chooseClass);
-//     return chooseClassNum;
-// }
-// First Class Flight For Js Code
-// let addFirstClass=document.getElementById("addFirstClass");
-// addFirstClass.addEventListener('click',function(){
-//     firstClassSeatCount(true);
-// });
-// let lessFirstClass=document.getElementById("lessFirstClass");
-// lessFirstClass.addEventListener('click',function(){
-//     firstClassSeatCount(false);
-// });
-// function firstClassSeatCount(isIncrease){
-//     let countFirstClass=document.getElementById("countFirstClass").value;
-//     let countFirstClassNum=parseInt(countFirstClass);
-//     if(isIncrease==true){
-//         countFirstClassNum++;
-//     }
-//     else if(isIncrease==false && countFirstClassNum>0){
-//         countFirstClassNum--;
-//     }
-//     document.getElementById("countFirstClass").value=countFirstClassNum;
-    
-// }
-// let addFirstClass=document.getElementById("addFirstClass");
-// addFirstClass.addEventListener('click',function(){
-//     firstClassSeatCount(true);
-// });
-// let lessFirstClass=document.getElementById("lessFirstClass");
-// lessFirstClass.addEventListener('click',function(){
-//     firstClassSeatCount(false);
-// });
-
-
-
-
-
-// Economy Class Flight For Js Code
-// let addEconomyClass=document.getElementById("addEconomyClass");
-// addEconomyClass.addEventListener('click',function(){
-//     economyClassSeatCount(true);
-// });
-
-// let lessEconomyClass=document.getElementById("lessEconomyClass");
-// lessEconomyClass.addEventListener('click',function(){
-//    economyClassSeatCount(false);
-// });
-
-// function economyClassSeatCount(isIncrease){
-//     let countEconomyClass=document.getElementById("countEconomyClass").value;
-//     let countEconomyClassNum=parseInt(countEconomyClass);
-//     if(isIncrease==true){
-//         countEconomyClassNum++;
-//     }
-//     else if(isIncrease==false && countEconomyClassNum>0){
-//         countEconomyClassNum--;
-//     }
-//     document.getElementById("countEconomyClass").value=countEconomyClassNum;
-    
-// }
+// Remove Box Js Code 
+let removeBox=document.getElementById("removeBox");
+removeBox.addEventListener('click',function(){
+    document.getElementById("mainDiv").style.display="block";
+    document.getElementById("confirmBox").style.display="none";
+});
